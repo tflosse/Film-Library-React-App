@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Film-Project/static/css/main.c9c92d0e.chunk.css",
+    "main.js": "/Film-Project/static/js/main.59fdb39f.chunk.js",
+    "main.js.map": "/Film-Project/static/js/main.59fdb39f.chunk.js.map",
+    "runtime~main.js": "/Film-Project/static/js/runtime~main.4040cd28.js",
+    "runtime~main.js.map": "/Film-Project/static/js/runtime~main.4040cd28.js.map",
+    "static/js/2.809b9a50.chunk.js": "/Film-Project/static/js/2.809b9a50.chunk.js",
+    "static/js/2.809b9a50.chunk.js.map": "/Film-Project/static/js/2.809b9a50.chunk.js.map",
+    "index.html": "/Film-Project/index.html",
+    "precache-manifest.d08b62da2adfc314b0f9ee6f32a77ff4.js": "/Film-Project/precache-manifest.d08b62da2adfc314b0f9ee6f32a77ff4.js",
+    "service-worker.js": "/Film-Project/service-worker.js",
+    "static/css/main.c9c92d0e.chunk.css.map": "/Film-Project/static/css/main.c9c92d0e.chunk.css.map"
+  }
+}
