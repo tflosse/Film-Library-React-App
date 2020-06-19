@@ -2,13 +2,29 @@ import React, { useState } from "react";
 import FilmRow from "./FilmRow";
 
 const FilmListings = (props) => {
-    const allFilms = props.films.map((d, i) => {
-        return <FilmRow film={d} key={d.id} />;
-      });
     const [filter,setFilter] = useState('all')
+    const film = filter === "faves"? props.faves : props.films;
+
+    const allFilms = props.films.map((film, i) => {
+        return (
+        <FilmRow film={film} 
+                key={film.id} 
+                onFaveToggle={() => props.onFaveToggle(film)}
+                isFave={props.faves.includes(film)}
+                handleDetailsClick={props.handleDetailsClick}/>
+    )});
+    const faveFilms = props.faves.map((film, i) => {
+        return (
+        <FilmRow film={film} 
+                key={film.id} 
+                onFaveToggle={() => props.onFaveToggle(film)}
+                isFave={props.faves.includes(film)}
+                handleDetailsClick={props.handleDetailsClick}/>
+    )});
+
     const handleFilterClick = (filter) => setFilter(filter)
         console.log("Setting filter to "+filter);
-    return (
+        return (
         <div className="film-list">
             <h1 className="section-title">FILMS</h1>
             <div className="film-list-filters">
@@ -20,10 +36,10 @@ const FilmListings = (props) => {
                 <div className={`film-list-filter ${filter === 'faves'? 'is-active' : ''}`}
                 onClick={() => handleFilterClick('faves')}> 
                 FAVES
-                    <span className="section-count">0</span>
+                    <span className="section-count">{props.faves.length}</span>
                 </div>
             </div>
-           {allFilms}
+            {filter === 'faves'? faveFilms:allFilms}
         </div>
     );
    }

@@ -8,14 +8,15 @@ const FilmRow = (props) => {
         console.log("Fetching details for "+props.film.title)
     };
         return (
-            <div className="film-row" id={props.film.id}
-            onClick={() => handleDetailsClick('film')}>
+            <div className="film-row" 
+                id={props.film.id}
+                onClick={() => props.handleDetailsClick(props.film)}>
                 <img className="film-poster" src={posterUrl} alt={props.film.title} />
                 <div className="film-summary">
                     <h1>{props.film.title}</h1>
                     <p>{dateYear.getFullYear()}</p>
                 </div>
-                <Fave />
+                <Fave onFaveToggle={() => props.onFaveToggle()} isFave={props.isFave}/>
             </div>
         )
 }
